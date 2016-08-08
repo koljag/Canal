@@ -8,7 +8,7 @@
 
         public override string ToString()
         {
-            return string.Format("GO TO {0}", ReferencedProcedure);
+            return $"GO TO {ReferencedProcedure}";
         }
     }
 }

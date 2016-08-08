@@ -1,4 +1,7 @@
-﻿v2.11
+﻿v2.12
+- Framework update to .NET 4.6
+
+v2.11
 - "Referenced By" now jumps to the line where the "perform" is
 - Added support for multiline-variable-definitions
 - Reworked VariableTree

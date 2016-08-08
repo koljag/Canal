@@ -19,10 +19,6 @@ namespace Model.Pictures
                         return IntegersLength + FractionsLength + 1;
                     case CompType.Comp3:
                         return (int)Math.Ceiling((double)(IntegersLength + FractionsLength + 1) / 2);
-                    case CompType.Comp:
-                    case CompType.Comp1:
-                    case CompType.Comp2:
-                    case CompType.Comp4:
                     default:
                         throw new NotImplementedException();
                 }
@@ -31,7 +27,7 @@ namespace Model.Pictures
 
         public override string ToString()
         {
-            return string.Format("PIC S9{0}V9{1}", IntegersLength > 1 ? "(" + IntegersLength + ")" : string.Empty, FractionsLength > 1 ? "(" + FractionsLength + ")" : string.Empty);
+            return $"PIC S9{(IntegersLength > 1 ? "(" + IntegersLength + ")" : string.Empty)}V9{(FractionsLength > 1 ? "(" + FractionsLength + ")" : string.Empty)}";
         }
     }
 }

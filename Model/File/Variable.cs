@@ -6,9 +6,9 @@ namespace Model.File
 {
     public class Variable
     {
-        public int VariableLevel { get; set; }
+        public int VariableLevel { get; }
 
-        public string VariableName { get; set; }
+        public string VariableName { get;  }
 
         public Variable Redefines { get; set; }
 
@@ -18,11 +18,11 @@ namespace Model.File
 
         public int ByteLength { get; set; }
 
-        public IPic Picture { get; set; }
+        public IPic Picture { get;  }
 
         private string Code { get; set; }
 
-        public List<Variable> Variables { get; set; }
+        public List<Variable> Variables { get;  }
 
         public Variable ParentVariable { get; set; }
 
@@ -30,13 +30,7 @@ namespace Model.File
 
         public int Index { get; set; }
 
-        public string VariableDefinition
-        {
-            get
-            {
-                return string.Format("{0} {1} {2}", VariableLevel.ToString("D2"), VariableName, Picture);
-            }
-        }
+        public string VariableDefinition => $"{VariableLevel.ToString("D2")} {VariableName} {Picture}";
 
         public Variable Root
         {
@@ -72,7 +66,7 @@ namespace Model.File
 
         public override string ToString()
         {
-            return string.Format("{0} {1}, Variables: {2}", VariableLevel, VariableName, Variables.Count);
+            return $"{VariableLevel} {VariableName}, Variables: {Variables.Count}";
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public interface IPic
     {
-        int Length { get; set; }
+        int Length { get; }
 
         string Value { get; set; }
 

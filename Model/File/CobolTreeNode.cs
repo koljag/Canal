@@ -9,9 +9,9 @@ namespace Model.File
         public abstract int StartIndex { get; }
         public abstract int EndIndex { get; }
 
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public int Length { get { return EndIndex - StartIndex; } }
+        public int Length => EndIndex - StartIndex;
 
         protected CobolTreeNode(CobolFile cobolFile, string nodeText)
         {

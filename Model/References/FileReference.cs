@@ -46,9 +46,9 @@ namespace Model.References
         public override string ToString()
         {
             if (ReferencedIn.Any())
-                return string.Format("{0} > {1} ({2})", Directory, ProgramName, string.Join(", ", ReferencedIn));
+                return $"{Directory} > {ProgramName} ({string.Join(", ", ReferencedIn)})";
 
-            return string.Format("{0} > {1}", Directory, ProgramName);
+            return $"{Directory} > {ProgramName}";
         }
     }
 }

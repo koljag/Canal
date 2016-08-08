@@ -4,11 +4,11 @@ namespace Model.Pictures
 {
     public class Pic9 : IPic
     {
-        private long? value;
+        private long? _value;
 
-        public bool Negative { get; set; }
+        public bool Negative { get; }
 
-        public int Length { get; set; }
+        public int Length { get; }
 
         public int ByteLength
         {
@@ -21,9 +21,6 @@ namespace Model.Pictures
                     case CompType.Comp:
                     case CompType.Comp3:
                         return (int)Math.Ceiling((double)Length / 2);
-                    case CompType.Comp1:
-                    case CompType.Comp2:
-                    case CompType.Comp4:
                     default:
                         throw new NotImplementedException();
                 }
@@ -41,13 +38,13 @@ namespace Model.Pictures
 
         public virtual string Value
         {
-            get { return value != null ? value.ToString() : null; }
-            set { this.value = string.IsNullOrWhiteSpace(value) ? (long?)null : value.StartsWith("ZERO") ? 0 : long.Parse(value); }
+            get { return _value != null ? _value.ToString() : null; }
+            set { _value = string.IsNullOrWhiteSpace(value) ? (long?)null : value.StartsWith("ZERO") ? 0 : long.Parse(value); }
         }
 
         public override string ToString()
         {
-            return string.Format("PIC {0}9{1}", Negative ? "-" : "", Length > 1 ? "(" + Length + ")" : string.Empty);
+            return $"PIC {(Negative ? "-" : "")}9{(Length > 1 ? "(" + Length + ")" : string.Empty)}";
         }
     }
 }

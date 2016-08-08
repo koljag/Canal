@@ -49,12 +49,12 @@ namespace Canal
         {
             if (_tabUtil.CurrentFileControl != null)
             {
-                Text = "CANAL - " + _tabUtil.CurrentFileControl.CobolFile.Name + " (" +
-                       _tabUtil.CurrentFileControl.CobolFile.FileReference.FilePath + ")";
+                Text = string.Format("CANAL - {0} ({1})", _tabUtil.CurrentFileControl.CobolFile.Name,
+                       _tabUtil.CurrentFileControl.CobolFile.FileReference.FilePath);
             }
             else
             {
-                Text = "CANAL Cobol Analyzer";
+                Text = @"CANAL Cobol Analyzer";
             }
         }
 
@@ -300,7 +300,7 @@ namespace Canal
         {
             if (ProjectUtil.Instance.Current != null)
             {
-                var result = MessageBox.Show("Close current project without saving?", "Warning", MessageBoxButtons.YesNo);
+                var result = MessageBox.Show(Resources.MainWindow_Close_current_project_without_saving_, Resources.Warning, MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)
                     return;
             }

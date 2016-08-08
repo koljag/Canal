@@ -71,7 +71,12 @@ namespace Canal.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to v2.10
+        ///   Looks up a localized string similar to v2.11
+        ///- &quot;Referenced By&quot; now jumps to the line where the &quot;perform&quot; is
+        ///- Added support for multiline-variable-definitions
+        ///- Reworked VariableTree
+        ///
+        ///v2.10
         ///- Many small improvements on glitches in 2.9
         ///- Current file name is now displayed in titlebar
         ///- New &quot;Most recently used&quot;
@@ -84,9 +89,7 @@ namespace Canal.Properties {
         ///v2.8
         ///- Added jumping to sections
         ///- Added command to revert all changes
-        ///- Control + F now focusses search textbox instead of opening search window
-        ///- Bugfix: Navigate backwards now includes lines from search and toc selection
-        ///- Bugfix: Filenames for resolving copys now have to be [rest of string was truncated]&quot;;.
+        ///- Control + F now focusses search textbox instead of openin [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ChangeLog {
             get {
@@ -242,6 +245,15 @@ namespace Canal.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close current project without saving?.
+        /// </summary>
+        internal static string MainWindow_Close_current_project_without_saving_ {
+            get {
+                return ResourceManager.GetString("MainWindow_Close_current_project_without_saving_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Multiple Matching Files Found.
         /// </summary>
         internal static string MultipleFilesFound {
@@ -386,6 +398,15 @@ namespace Canal.Properties {
             get {
                 object obj = ResourceManager.GetObject("SourceCodePro_Regular", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
             }
         }
     }

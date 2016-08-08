@@ -440,4 +440,10 @@
   <data name="ProcedureInfo_LinesOfCodeError" xml:space="preserve">
     <value>Lines incl. performs not calculated due to recursion.</value>
   </data>
+  <data name="MainWindow_Close_current_project_without_saving_" xml:space="preserve">
+    <value>Close current project without saving?</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
 </root>

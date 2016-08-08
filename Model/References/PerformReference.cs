@@ -17,7 +17,7 @@ namespace Model.References
 
         public override string ToString()
         {
-            return string.Format("PERFORM {0}", ReferencedProcedure);
+            return $"PERFORM {ReferencedProcedure}";
         }
     }
 }

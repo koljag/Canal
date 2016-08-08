@@ -4,7 +4,7 @@ namespace Model.Pictures
     {
         private string value;
 
-        public int Length { get; set; }
+        public int Length { get; }
 
         public string Value
         {
@@ -14,7 +14,7 @@ namespace Model.Pictures
 
         public CompType CompType { get; set; }
 
-        public int ByteLength { get { return Length; } }
+        public int ByteLength => Length;
 
         public PicX(int length)
         {
@@ -23,7 +23,7 @@ namespace Model.Pictures
 
         public override string ToString()
         {
-            return string.Format("PIC X{0}", Length > 1 ? "(" + Length + ")" : string.Empty);
+            return $"PIC X{(Length > 1 ? "(" + Length + ")" : string.Empty)}";
         }
     }
 }

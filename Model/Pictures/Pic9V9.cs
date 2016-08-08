@@ -7,9 +7,9 @@ namespace Model.Pictures
     {
         private decimal? value;
 
-        public int IntegersLength { get; set; }
+        public int IntegersLength { get; }
 
-        public int FractionsLength { get; set; }
+        public int FractionsLength { get; }
 
         public new int ByteLength
         {
@@ -46,7 +46,7 @@ namespace Model.Pictures
 
         public override string ToString()
         {
-            return string.Format("PIC 9{0}V9{1}", IntegersLength > 1 ? "(" + IntegersLength + ")" : string.Empty, FractionsLength > 1 ? "(" + FractionsLength + ")" : string.Empty);
+            return $"PIC 9{(IntegersLength > 1 ? "(" + IntegersLength + ")" : string.Empty)}V9{(FractionsLength > 1 ? "(" + FractionsLength + ")" : string.Empty)}";
         }
     }
 }

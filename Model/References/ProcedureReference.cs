@@ -15,7 +15,7 @@ namespace Model.References
             ReferencedProcedure = procedure.Name;
         }
 
-        public string ReferencedProcedure { get; set; }
+        public string ReferencedProcedure { get; }
 
         public Procedure Procedure { get; set; }
     }
